@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="UTF-8" />
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cleoford Sanggawa | Portfolio</title>
+
+        <!-- Biblical-themed serif font -->
+       
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: #fefae0;
+            color: #3e2c1c;
+            padding: 20px;
+            background-image: url('back1.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px;
+            background: rgba(255, 250, 240, 0.95);
+            border: 2px solid #c2a76f;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #8b5e3c;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #5a3e2b;
+        }
+
+        .sub {
+            color: #9d7b5a;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .proverb {
+            font-style: italic;
+            font-size: 18px;
+            color: #5c3d2e;
+            margin: 20px 0;
+            border-left: 4px solid #c2a76f;
+            padding-left: 15px;
+        }
+
+        .start-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #6d4c41;
+            color: #fff8e1;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: #a97458;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            border: 1px solid #d2b48c;
+        }
+
+        section h2 {
+            color: #6b4226;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-bottom: 1px dashed #c2a76f;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 20px;
+            color: #fff8e1;
+            background: #6d4c41;
+            border-radius: 50%;
+            padding: 10px;
+            width: 42px;
+            height: 42px;
+            text-align: center;
+            line-height: 22px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .icon:hover {
+            background: #a97458;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #5c3d2e;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+        <audio id="bg-music" autoplay loop>
+               
+        <source src="music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+           
+    </audio>
+
+        <script>
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('bg-music');
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    document.body.addEventListener('click', () => {
+                        audio.play();
+                    }, {
+                        once: true
+                    });
+                });
+            }
+        });
+    </script>
+
+        <div class="container">
+                <header>
+                        <img src="profile.jpg" alt="Cleoford Sanggawa" class="profile-pic">
+                        <h1>Cleoford Sanggawa</h1>
+                        <p class="sub">Computer Science Student | Future Full-Stack Developer</p>
+                        <p class="proverb">“Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.”<br>– Proverbs 3:5-6</p>
+                        <a href="start.html" class="start-button">Start Your Journey →</a>
+                    </header>
+
+                <section>
+                        <h2>About Me</h2>
+                        <p>Hi! I'm Cleoford, a curious and creative Computer Science student who enjoys building websites and solving tech problems. I'm passionate about making clean, useful, and user-friendly software.</p>
+                    </section>
+
+                <section>
+                        <h2>Hobbies</h2>
+                        <ul>
+                                <li>Gaming</li>
+                                <li>Drawing and Digital Art</li>
+                                <li>Photography</li>
+                                <li>Programming Experiments</li>
+                                <li>Listening to Lo-Fi, RNB and Jazz</li>
+                            </ul>
+                    </section>
+
+                <section>
+                        <h2>Education</h2>
+                        <ul>
+                                <li><strong>Elementary:</strong> Malipay Elementary School</li>
+                                <li><strong>High School:</strong> Camella National High School</li>
+                                <li><strong>College:</strong> Cavite State University – BS Computer Science</li>
+                            </ul>
+                    </section>
+
+                <section>
+                        <h2>Contact</h2>
+                        <div class="social-icons">
+                                <a class="icon" href="https://www.facebook.com/share/1AoeaHayot/" target="_blank">✝️</a>
+                                <a class="icon" href="mailto:cleoford.sanggawa@example.com">✉️</a>
+                                <a class="icon" href="https://github.com/cleofordsanggawa" target="_blank">👹</a>
+                            </div>
+                    </section>
+
+                <footer>
+                        &copy; 2025 Cleoford Sanggawa. All Rights Reserved | Codex Of Realms.
+                    </footer>
+            </div>
+</body>
+
+</html>

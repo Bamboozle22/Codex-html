@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="UTF-8" />
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Codex of Realms</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+        body {
+            font-family: 'IM Fell English SC', serif;
+            background: url('back1.jpg') center/cover fixed no-repeat;
+            color: #2e1f0f;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(68, 38, 14, 0.95);
+            padding: 30px;
+            text-align: center;
+            color: #f8ecd4;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3.5em;
+            letter-spacing: 3px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #fff8dc;
+            text-shadow: 0 0 10px #fff, 0 0 20px gold, 0 0 30px #ffd700;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px gold, 0 0 30px #ffd700;
+            }
+
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px gold, 0 0 40px #ffd700;
+            }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background-color: rgba(255, 248, 220, 0.94);
+            border: 2px solid #a98743;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #a98743;
+        }
+
+        .card-description {
+            padding: 15px;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            color: #4a2e14;
+        }
+
+        footer {
+            background-color: rgba(68, 38, 14, 0.95);
+            color: #f8ecd4;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .return-button {
+            background-color: #4a2e14;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .return-button:hover {
+            background-color: #a98743;
+        }
+    </style>
+</head>
+
+<body>
+        <header>
+                <h1>Codex of Realms</h1>
+            </header>
+
+        <audio autoplay loop>
+               
+        <source src="audio1.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+           
+    </audio>
+
+        <h2>ANGELS OF GOD</h2>
+       
+   <!-- Return Button -->
+<a href="index.html" class="return-button">Return to Previous Page</a>
+
+    <div class="card-grid">
+        <!-- 30 Angels -->
+        <div class="card" onclick="showModal('Michael', 'Leader of the heavenly armies, protector of Israel and conqueror of evil.')">
+            <img src="michael.jpg" alt="Michael" />
+            <div class="card-description">
+                <div class="card-title">Michael</div>Leader of the heavenly armies, protector of Israel and conqueror of evil.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Gabriel', 'Messenger of God, bearer of divine announcements such as the birth of Christ.')">
+            <img src="gabriel.jpg" alt="Gabriel" />
+            <div class="card-description">
+                <div class="card-title">Gabriel</div>Messenger of God, bearer of divine announcements such as the birth of Christ.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Raphael', 'Healer and guide, protector of travelers and bringer of divine remedies.')">
+            <img src="raphael.jpg" alt="Raphael" />
+            <div class="card-description">
+                <div class="card-title">Raphael</div>Healer and guide, protector of travelers and bringer of divine remedies.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Uriel', 'Angel of wisdom and enlightenment, known for illuminating divine truth.')">
+            <img src="uriel.jpg" alt="Uriel" />
+            <div class="card-description">
+                <div class="card-title">Uriel</div>Angel of wisdom and enlightenment, known for illuminating divine truth.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Selaphiel', 'Angel of prayer and worship who carries the faithful’s prayers to God.')">
+            <img src="selaphiel.jpg" alt="Selaphiel" />
+            <div class="card-description">
+                <div class="card-title">Selaphiel</div>Angel of prayer and worship who carries the faithful’s prayers to God.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Jegudiel', 'Protector of leaders, symbolizes divine reward for righteous labor.')">
+            <img src="jegudiel.jpg" alt="Jegudiel" />
+            <div class="card-description">
+                <div class="card-title">Jegudiel</div>Protector of leaders, symbolizes divine reward for righteous labor.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Barachiel', 'Bringer of blessings and grace, often shown with roses.')">
+            <img src="barachiel.jpg" alt="Barachiel" />
+            <div class="card-description">
+                <div class="card-title">Barachiel</div>Bringer of blessings and grace, often shown with roses.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Zadkiel', 'Angel of mercy, known for halting Abraham’s sacrifice.')">
+            <img src="zadkiel.jpg" alt="Zadkiel" />
+            <div class="card-description">
+                <div class="card-title">Zadkiel</div>Angel of mercy, known for halting Abraham’s sacrifice.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Remiel', 'Angel of resurrection, hope, and judgment.')">
+            <img src="remiel.jpg" alt="Remiel" />
+            <div class="card-description">
+                <div class="card-title">Remiel</div>Angel of resurrection, hope, and judgment.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Raguel', 'Angel of justice and harmony, overseer of other angels.')">
+            <img src="raguel.jpg" alt="Raguel" />
+            <div class="card-description">
+                <div class="card-title">Raguel</div>Angel of justice and harmony, overseer of other angels.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Metatron', 'Heavenly scribe and closest to God’s throne.')">
+            <img src="metatron.jpg" alt="Metatron" />
+            <div class="card-description">
+                <div class="card-title">Metatron</div>Heavenly scribe and closest to God’s throne.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Sandalphon', 'Twin of Metatron, angel of music and prayers.')">
+            <img src="sandalphon.jpg" alt="Sandalphon" />
+            <div class="card-description">
+                <div class="card-title">Sandalphon</div>Twin of Metatron, angel of music and prayers.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Phanuel', 'Angel of repentance, one of the four who stand before God.')">
+            <img src="phanuel.jpg" alt="Phanuel" />
+            <div class="card-description">
+                <div class="card-title">Phanuel</div>Angel of repentance, one of the four who stand before God.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Sariel', 'Punisher of the fallen and guide of the souls.')">
+            <img src="sariel.jpg" alt="Sariel" />
+            <div class="card-description">
+                <div class="card-title">Sariel</div>Punisher of the fallen and guide of the souls.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Samael', 'Ambiguous angel of death and judgment, sometimes seen as an accuser or destroyer.')">
+            <img src="samael.jpg" alt="Samael" />
+            <div class="card-description">
+                <div class="card-title">Samael</div>Ambiguous angel of death and judgment, sometimes seen as an accuser or destroyer.
+            </div>
+        </div>
+        <div class="card" onclick="showModal('Israfel', 'Archangel of music and poetry, trumpet of Judgment.')">
+            <img src="israfel.jpg" alt="Israfel" />
+            <div class="card-description">
+                <div class="card-title">Israfel</div>Archangel of music and poetry, trumpet of Judgment.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Ariel', 'Angel of nature, protector of the Earth.')">
+            <img src="ariel.jpg" alt="Ariel" />
+            <div class="card-description">
+                <div class="card-title">Ariel</div>Angel of nature, protector of the Earth.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Cassiel', 'Angel of solitude and time.')">
+            <img src="cassiel.jpg" alt="Cassiel" />
+            <div class="card-description">
+                <div class="card-title">Cassiel</div>Angel of solitude and time.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Chamael', 'Angel of love, peace, and healing.')">
+            <img src="chamael.jpg" alt="Chamael" />
+            <div class="card-description">
+                <div class="card-title">Chamael</div>Angel of love, peace, and healing.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Zophiel', 'Angel of beauty and divine order.')">
+            <img src="zophiel.jpg" alt="Zophiel" />
+            <div class="card-description">
+                <div class="card-title">Zophiel</div>Angel of beauty and divine order.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Azrael', 'Angel of death and the afterlife.')">
+            <img src="azrael.jpg" alt="Azrael" />
+            <div class="card-description">
+                <div class="card-title">Azrael</div>Angel of death and the afterlife.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Kerubiel', 'Mighty cherub, angelic guardian of the throne of God.')">
+            <img src="kerubiel.jpg" alt="Kerubiel" />
+            <div class="card-description">
+                <div class="card-title">Kerubiel</div>Mighty cherub, angelic guardian of the throne of God.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Seraphiel', 'Chief of the Seraphim, angel of purification and divine fire.')">
+            <img src="seraphiel.jpg" alt="Seraphiel" />
+            <div class="card-description">
+                <div class="card-title">Seraphiel</div>Chief of the Seraphim, angel of purification and divine fire.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Duma', 'Angel of silence and stillness.')">
+            <img src="duma.jpg" alt="Duma" />
+            <div class="card-description">
+                <div class="card-title">Duma</div>Angel of silence and stillness.
+            </div>
+        </div>
+
+        <div class="card" onclick="showModal('Jeremiel', 'Angel of visions and prophecy, who guides the souls.')">
+            <img src="jeremiel.jpg" alt="Jeremiel" />
+            <div class="card-description">
+                <div class="card-title">Jeremiel</div>Angel of visions and prophecy, who guides the souls.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Codex of Realms. Sacred texts interpreted for illustrative purposes.
+    </footer>
+
+    <script>
+        function showModal(title, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('infoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>
